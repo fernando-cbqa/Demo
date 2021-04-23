@@ -21,12 +21,13 @@ public class searchSteps extends Config {
     }
 
     @Then("^The numbers of links in the first page are (.*)$")
-    public void the_numbers_of_links_in_the_first_page_are(int links){
-        Assert.assertEquals(search_page.getLinks(),links);
+    public void the_numbers_of_links_in_the_first_page_are(String links){
+        Assert.assertEquals(String.valueOf(search_page.getLinks()),links);
+
     }
 
     @And("^Click on link number (.*)$")
-    public void click_on_link_number(int num){
+    public void click_on_link_number(String num){
         search_page.clickOnNextLink(num);
     }
 }

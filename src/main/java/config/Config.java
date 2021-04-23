@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Config extends Data{
     public static WebDriver driver;
 
-    @BeforeTest
+    @BeforeSuite
     public void beforTest(){
         if(Data.BROWSER == "chrome"){
             driver = new ChromeDriver();
@@ -31,6 +31,9 @@ public class Config extends Data{
     @AfterTest
     public void afterTest(){
         driver.close();
-        //driver.quit();
+    }
+    @AfterSuite
+    public void afterSuite(){
+        driver.quit();
     }
 }

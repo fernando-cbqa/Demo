@@ -31,7 +31,7 @@ public class search_page extends Config {
         return links.size();
     }
 
-    public static void clickOnNextLink(int num){
+    public static void clickOnNextLink(String num){
         driver.findElement(By.xpath("//div/div["+num+"]/div/div/div/a/h3")).click();
     }
 }
